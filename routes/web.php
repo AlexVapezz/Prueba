@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\UserActivity;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +15,7 @@ use App\Models\UserActivity;
 */
 
 Route::get('/', function () {
-    return UserActivity::get();
+    return view('welcome');
 });
+
+Route::get('list', [RoleController::class, 'show']);
