@@ -9,7 +9,7 @@ class RoleController extends Controller
 {
     //
     function show(){
-        $data = Role::paginate(2);
-        return view('list', ['roles' => $data]);
+        $data_rol = Role::paginate(10);
+        return view('rol', ['roles' => $data_rol]);
     }
 }

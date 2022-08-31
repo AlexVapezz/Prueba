@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\IncidenceController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +19,21 @@ use App\Http\Controllers\RoleController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('init');
 });
 
-Route::get('list', [RoleController::class, 'show']);
+Route::get('rol', [RoleController::class, 'show']);
+
+Route::get('project', [ProjectController::class, 'index']);
+
+Route::get('incidence', [IncidenceController::class, 'index']);
+
+Route::get('activity', [ActivityController::class, 'index']);
+
+Route::get('user', [UserController::class, 'show']);
+
+Route::post('addIncidence', [IncidenceController::class, 'store']);
+
+Route::post('addActivity', [ActivityController::class, 'store']);
+
+Route::post('addProject', [ProjectController::class, 'store']);
